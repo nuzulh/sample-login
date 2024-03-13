@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { HelperText } from '../components/helper-text'
-import axios from 'axios'
 import { InputText } from '../components/input-text'
+import axios from 'axios'
 
 type LoginData = {
   email?: string
@@ -56,14 +56,14 @@ export default function LoginPage() {
           type='email'
           name='email'
           placeholder='Input your email'
-          onChange={(e) => setLoginData(prev => ({ ...prev, email: e.target.value }))}
+          onChange={e => setLoginData(prev => ({ ...prev, email: e.target.value }))}
         />
         <InputText
           label='Password'
           type='password'
           name='password'
           placeholder='Input your password'
-          onChange={(e) => setLoginData(prev => ({ ...prev, password: e.target.value }))}
+          onChange={e => setLoginData(prev => ({ ...prev, password: e.target.value }))}
         />
         <HelperText message={errorMessage} />
         <button onClick={handleLogin}>
